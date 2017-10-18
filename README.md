@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple and advance searching RoR
 
-Things you may want to cover:
+tutorials:
+http://railscasts.com/episodes/37-simple-search-form?autoplay=true
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://www.youtube.com/watch?v=eUtUquKc2qQ&index=7&list=PLHzGJxyXFmpWhP1rxUdZL0oo1KmfSx6-3

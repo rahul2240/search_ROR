@@ -4,7 +4,7 @@ class Book < ApplicationRecord
 		if search
 			where(['name LIKE ?', "%#{search}%"])
 		else
-			self.all
+			all
 		end
 	end
 end
