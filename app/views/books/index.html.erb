@@ -1,28 +1,18 @@
 <p id="notice"><%= notice %></p>
 <!-- Button trigger modal -->
-
+<div class="text-center">
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   New Book
 </button>
+</div>
+<br>
+<br>
+<div class="row" id="bookinfo">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Isbn</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody  class="data_class">
 
         <%= render @books %>
- 
-  </tbody>
-</table>
 
+</div>
 
     <%= form_for(@book, remote: true) do |form| %>
 <!-- Modal -->
