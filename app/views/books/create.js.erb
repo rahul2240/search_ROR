@@ -1,3 +1,5 @@
-$('#new').remove();
-$('#new_link').show();
-$('.data_class').append('<%= j render(@book) %>');
+
+$('#exampleModal').modal('hide');
+$('.erase').val('');
+
+$('.data_class').append('<%= j render @book  %>');

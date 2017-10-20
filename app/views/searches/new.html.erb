@@ -1,37 +1,39 @@
-<p>Search Here : </p>
+<div class="row">
+<div class="col-md-6">
+<h3>Search Here : </h3>
 <br>
 <%= form_for @search do |f| %>
 	
 	<div class="field">
 	<%= f.label :keywords %>
-	<%= f.text_field :keywords %>
+	<%= f.text_field :keywords, class: 'form-control' %>
 	</div>	
 	<br>
 	<div class="field">
 	<%= f.label :category %>
-	<%= f.select :category, options_for_select(@categories), include_blank: true %>
+	<%= f.select :category, options_for_select(@categories), class: 'form-control', include_blank: true %>
 	</div>
 	<br>
 	<div class="field">
 	<%= f.label :min_price %>
-	<%= f.text_field :min_price, size: 10 %>
+	<%= f.text_field :min_price, size: 10, class: 'form-control' %>
 	</div>
 	<br>
 	<div class="field">
 	<%= f.label :max_price %>
-	<%= f.text_field :max_price, size: 10 %>
+	<%= f.text_field :max_price, size: 10, class: 'form-control' %>
 	</div>
 	<br>
 	<div class="field">
 	<%= f.label :isbn %>
-	<%= f.text_field :isbn %>
+	<%= f.text_field :isbn, class: 'form-control' %>
 	</div>
 	<br>
 	<div class="action">
-	<%= f.submit 'Search' %>
+	<%= f.submit 'Search', class: 'btn btn-primary' %> <%= link_to 'Back', books_path, class: 'btn btn-primary', style: 'color: white' %>
 	</div>
 
 
 <% end %>
-
-<%= link_to 'Back', books_path %>
+</div>
+</div>

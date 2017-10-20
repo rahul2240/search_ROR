@@ -1,8 +1,4 @@
-<p>Show: </p>
 
-<br>
-
-<p><%= link_to 'Back', new_search_path %></p>
 
 <% if @search.search_books.empty? %>
 
@@ -20,3 +16,5 @@
 	</div>
 		<% end %>
 <% end %>
+<br>
+<p><%= link_to 'Back', new_search_path, class: 'btn btn-primary' %></p>
