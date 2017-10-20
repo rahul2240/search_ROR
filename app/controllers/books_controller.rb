@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.search(params[:search])
+
   end
 
   # GET /books/1
@@ -30,6 +31,7 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }
