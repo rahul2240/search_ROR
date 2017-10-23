@@ -1,1 +1,2 @@
-$('#book_id_<%= @book.id %>').remove();
+$('#book_<%= @book.id %>').remove();
+$('.alert').html("<p class='alert alert-danger'>Book Removed</p>")
