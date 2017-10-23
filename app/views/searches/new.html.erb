@@ -1,39 +1,79 @@
-<div class="row">
-<div class="col-md-6">
-<h3>Search Here : </h3>
-<br>
+<br><br><br><br><br><br>
 <%= form_for @search do |f| %>
-	
-	<div class="field">
-	<%= f.label :keywords %>
-	<%= f.text_field :keywords, class: 'form-control' %>
-	</div>	
-	<br>
-	<div class="field">
-	<%= f.label :category %>
-	<%= f.select :category, options_for_select(@categories), class: 'form-control', include_blank: true %>
-	</div>
-	<br>
-	<div class="field">
-	<%= f.label :min_price %>
-	<%= f.text_field :min_price, size: 10, class: 'form-control' %>
-	</div>
-	<br>
-	<div class="field">
-	<%= f.label :max_price %>
-	<%= f.text_field :max_price, size: 10, class: 'form-control' %>
-	</div>
-	<br>
-	<div class="field">
-	<%= f.label :isbn %>
-	<%= f.text_field :isbn, class: 'form-control' %>
-	</div>
-	<br>
-	<div class="action">
-	<%= f.submit 'Search', class: 'btn btn-primary' %> <%= link_to 'Back', books_path, class: 'btn btn-primary', style: 'color: white' %>
-	</div>
+  
+  <div class="row">
+   
+    <div class="col-md-6 mb-3">    
+	    <%= f.label :keywords %>
+		<%= f.text_field :keywords, class: 'form-control is-valid', placeholder: "Keyword", value: "Mark" %>
+    </div>
 
+    <div class="col-md-6 mb-3">
+    	
+    <%= f.label :category %>
+
+	<%= f.text_field :category, class: 'form-control coti'  %>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+    	<%= f.label :min_price %>
+		<%= f.text_field :min_price, size: 10, class: 'form-control is-valid', placeholder: "Min Price", value: "Mark" %>
+     
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.label :max_price %>
+	  <%= f.text_field :max_price, size: 10, class: 'form-control is-valid', placeholder: "Max Price", value: "Mark" %>
+      
+    </div>
+    <div class="col-md-3 mb-3">
+      <%= f.label :isbn %>
+	  <%= f.text_field :isbn, size: 10, class: 'form-control is-valid', placeholder: "ISBN", value: "Mark" %>
+    </div>
+
+  </div>
+
+	
+	<%= f.submit 'Search', class: 'btn btn-primary' %> <%= link_to 'Back', books_path, class: 'btn btn-primary', style: 'color: white' %>
+	
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</div>
 
 <% end %>
-</div>
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script >
+
+$(document).ready( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+</script>

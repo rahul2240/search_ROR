@@ -1,19 +1,21 @@
 
-	<div class="col-md-3 text-center box blog-main" id="book_<%= book.id %>">
+	<div class='col-md-3 text-center box blog-main' id="book_id_<%= book.id %>" >
   	<div class="card" style="width: 270px; margin-bottom: 20px;" >
-			  <div class="card-body text-white bg-danger mb-3"  id='book_id_<%= book.id %>'>
+			  <div class="card-body text-white bg-danger mb-3" >
 			    <h4 class="card-title "><%= book.name %></h4>
 
 			  </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= book.category %></li>
-    <li class="list-group-item"><%= book.price %></li>
-    <li class="list-group-item"><%= book.isbn %></li>
+    <li class="list-group-item"><b>Category: </b><%= book.category %></li>
+    <li class="list-group-item"><b>Price: </b><%= book.price %></li>
+    <li class="list-group-item"><b>ISBN: </b><%= book.isbn %></li>
   </ul>
 		  <div class="card-body" >
-		    <%= link_to 'Show', book, class: 'card-link',style: "color: black; background-color: white;" %>
-		  	<%= link_to 'Edit', edit_book_path(book), class: 'card-link',style: "color: black; background-color: white;" %>
-		    <%= link_to 'Destroy', book, method: :delete, remote: true, class: 'card-link',style: "color: black; background-color: white;" %>
+		  	<div class="btn-group" role="group" aria-label="Basic example">
+		    <%= link_to 'Show', book, class: 'card-link btn btn-primary',style: "color: black; background-color: white;" %>
+		  	<%= link_to 'Edit', edit_book_path(book), class: 'card-link btn btn-info',style: "color: black; background-color: white;" %>
+		    <%= link_to 'Destroy', book, method: :delete, remote: true, class: 'card-link btn btn-danger',style: "color: black; background-color: white;" %>
+		</div>
 		  </div>
 	</div>
 </div>

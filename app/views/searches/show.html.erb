@@ -1,3 +1,4 @@
+<div class= "row">
 
 
 <% if @search.search_books.empty? %>
@@ -5,16 +6,32 @@
 		<p> no record </p>
 <% else %>
 
-	<% @search.search_books.each do |c| %>
-	<br>
+<% @search.search_books.each do |c| %>	
+<div class='col-md-3 text-center box blog-main' id="book_id_<%= c.id %>" >
+  	<div class="card" style="width: 270px; margin-bottom: 20px;" >
+			 
+			  <div class="card-body text-white bg-danger mb-3" >
+			    <h4 class="card-title "><%= c.name %></h4>
+			 </div>
 
-	<div class="div">
-		<h2><%= c.name %></h2>
-		<p>Price: <%= c.price %></p>
-		<p>Category: <%= c.category %></p>
-		<p>ISBN: <%= c.isbn %></p>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item"><b>Category: </b><%= c.category %></li>
+				    <li class="list-group-item"><b>Price: </b><%= c.price %></li>
+				    <li class="list-group-item"><b>ISBN: </b><%= c.isbn %></li>
+				  </ul>
+
+		  <div class="card-body" >
+		  	<div class="btn-group" role="group" aria-label="Basic example">
+			    <%= link_to 'Show', c, class: 'card-link btn btn-primary',style: "color: black; background-color: white;" %>
+			  	<%= link_to 'Edit', edit_book_path(c), class: 'card-link btn btn-info',style: "color: black; background-color: white;" %>
+			    <%= link_to 'Destroy', c, method: :delete, remote: true, class: 'card-link btn btn-danger',style: "color: black; background-color: white;" %>
+			</div>
+		  </div>
 	</div>
-		<% end %>
+</div>
 <% end %>
+	
+<% end %>
+</div>
 <br>
 <p><%= link_to 'Back', new_search_path, class: 'btn btn-primary' %></p>
